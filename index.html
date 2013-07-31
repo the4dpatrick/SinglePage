@@ -2,12 +2,15 @@
 <html>
 	<head>
 		<title>Single page Website</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
 		<script type="text/javascript" src="jquery-1.3.2.js"></script>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
 		<nav>
-			<p>Logo</p>
+			<p class="logo">Logo</p>
 			<ul>
 				<li><a href="#about">About</a></li>
 				<li><a href="#portfolio">Portfolio</a></li>
@@ -19,16 +22,32 @@
 			<li class="port"><a title="Portfolio" href="#portfolio"></a></li>
 			<li class="contact"><a title="Contact" href="#contact"></a></li>
 		</ul>
+		
 		<div id="page1", class="section">
 			<a id="about" class="anchor"></a>
-			<p>Patrick</p>
+			<h1>About Me</h1>
 		</div>
 		<div id="page2", class="section">
 			<a id="portfolio" class="anchor"></a>
-			
+			<h2>Portfolio</h2>
+			<div class="row">
+				<div>
+					<div class="example"></div>
+					<p>Example1</p>
+				</div>
+				<div>
+					<div class="example"></div>
+					<p>Example2</p>
+				</div>
+				<div>
+					<div class="example"></div>
+					<p>Example3</p>
+				</div>
+			</div>
 		</div>
 		<div id="page3", class="section">
 			<a id="contact" class="anchor"></a>
+			<h3>Contact</h3>
 		</div>
 
 	    <script type="text/javascript">
@@ -45,5 +64,28 @@
                 );
             });
         </script>
+		<script>$(document).ready(function() {
+		  function filterPath(string) {
+		    return string
+		      .replace(/^\//,'')  
+		      .replace(/(index|default).[a-zA-Z]{3,4}$/,'')  
+		      .replace(/\/$/,'');
+		  }
+		  $('a[href*=#]').each(function() {
+		    if ( filterPath(location.pathname) == filterPath(this.pathname)
+		    && location.hostname == this.hostname
+		    && this.hash.replace(/#/,'') ) {
+		      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+		      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+		       if ($target) {
+		         var targetOffset = $target.offset().top;
+		         $(this).click(function() {
+		           $('html, body').animate({scrollTop: targetOffset}, 2000);
+		           return false;
+		         });
+		      }
+		    }
+		  });
+		});</script>
 	</body>
 </html>

@@ -1,7 +1,16 @@
-body {
+body {
 	background-color: #ecf0f1;
 }
 /* Top Nav */
+* {
+	font-family: 'Lato', sans serif;
+}
+
+.logo:hover {
+	font-size: 2.2em;
+	color: #2ecc71;
+	padding-top: 13px;
+}
 nav {
 	width: 100%;
 	position: fixed;
@@ -19,23 +28,34 @@ nav p {
 	display: inline;
 	margin: 0;
 	padding-left: 20px;
-	padding-top: 10px;
+	padding-top: 15px;
 }
 
 nav ul {
 	float: right;
 	padding-right: 20px;
-	padding-top: 5px;
+	padding-top: 22px;
 }
 nav li {
 	display: inline;
 	padding: 10px;
 }
 nav li a {
-	font-size: 1em;
+	font-size: 1.1em;
 	color: white;
 	display: inline;
 	text-decoration: none;
+	vertical-align: top;
+}
+
+nav li a:hover {
+	text-decoration: underline;
+}
+
+nav li:before {
+	content: " | ";
+	color:white;
+	
 }
 
 
@@ -60,7 +80,7 @@ ul#navigation li {
 
 ul#navigation li a {
 	display: block;
-	margin-left: 85px;
+	margin-left: 50px;
 	width: 100px;
 	height: 70px;
 	background-color: #CFCFCF;
@@ -90,10 +110,12 @@ ul#navigation .contact a {
 
 /* sections */
 .section {
+	display: inline-block;
 	width: 75%;
+	min-width: 550px;
 	height: 1000px;
 	left: 0;
-	margin: 0 auto;
+	margin-left: 12.5% ;
 	position: relative;
 }
 
@@ -104,6 +126,8 @@ ul#navigation .contact a {
 
 #page2 {
 	background-color: #e74c3c;
+	height: auto;
+	min-height: 1000px;
 }
 
 #page3 {
@@ -119,4 +143,43 @@ ul#navigation .contact a {
 	z-index: -1;
 	left: 0;
 	visibility: hidden;
+}
+
+/* Content */
+.section h1, .section h2, .section h3 {
+	font-weight: 700;
+	color: white;
+	font-size: 5em;
+	margin: 0 auto;
+	padding: 100px;
+}
+
+.row {
+	width: 100%;
+	margin: 0 auto;
+	left: 0;
+	margin-left: 6%;
+	padding-top: 75px;
+	padding-bottom: 100px;
+}
+.example {
+	margin: 15px;
+	width: 350px;
+	height: 250px;
+	background-color: white;
+	border: 10px solid #c0392b;
+	display: inline-block;
+	border-radius: 10px;
+}
+
+.row div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.row p {
+	width: 350px;
+	margin-left: 25px;
+	color: white;
+	padding-bottom: 50px;
 }
